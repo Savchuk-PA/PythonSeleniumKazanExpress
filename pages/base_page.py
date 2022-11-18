@@ -10,8 +10,9 @@ class BasePage():
     def open_page(self):
         self.browser.get(self.link)
 
-    def element_is_present(self, method, locator):
+    def element_is_present(self,method, locator):
         try:
             self.browser.find_element(method, locator)
         except NoSuchElementException:
-            return 'element is not present'
+            return False
+        return True
