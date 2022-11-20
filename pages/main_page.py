@@ -1,19 +1,23 @@
 import time
-from selenium.webdriver.common.by import By
+
+from locators.auth_page_locators import AuthPageLocators
+from locators.main_page_locators import MainPageLocators
 from pages.base_page import BasePage
-from .locators import MainPageLocators
 
 
 class MainPage(BasePage):
-    def should_be_view_catalog_products(self):
-        assert self.element_is_present(*MainPageLocators.CATALOG)
+    locators = MainPageLocators()
+    locatorsAuth = AuthPageLocators()
 
-    def click_logo(self):
-        time.sleep(5)
-        self.browser.find_element(By.CSS_SELECTOR, "a[data-test-id='link__logo']").click()
-        time.sleep(2)
+    def click_login_btn(self):
+        """click_login_btn() Клик на кнопку авторизации"""
+        self.element_is_visible(self.locators.LOGIN_BTN).click()
 
-    def click_catalog(self):
-        time.sleep(2)
-        self.browser.find_element(*MainPageLocators.CATALOG).click()
-        time.sleep(2)
+    def get_form_auth(self):
+        """get_form_auth() Вызывает форму авторизавции пользователя"""
+        self.open(MainPageLocators.url)
+        self.element_is_clickable(self.locators.LOGIN_BTN).click()
+
+    def get_user_name(self):
+        """get_user_name() Возвращает имя авторизованного пользователя"""
+        return self.element_is_visible(self.locators.USER_NAME).text

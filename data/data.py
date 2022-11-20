@@ -1,0 +1,11 @@
+class Auth:
+    valid_phone = '+79061177915'
+    valid_pass = '123456aA'
+    user_name = 'Абрахам'
+    short_pass = '12aaA'
+    short_phone = '+79'
+    none_phone = ''
+    none_pass = ''
+    long_phone = '+799999999999'
+    long_pass = 'asssssssssssssssssssssssssssssssssssdddddddddddddd12222222222222222444444444444444444444444A'
+    error_message = 'Минимум 8 символов'
