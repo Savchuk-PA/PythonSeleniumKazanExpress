@@ -19,6 +19,13 @@ class TestAuth:
         time.sleep(2)
         auth.refresh()
 
-        actual_user_name = main.element_is_visible(self.locators.USER_NAME).text
+        actual_user_name = main.get_user_name()
         expected_user_name = Auth.user_name
         assert expected_user_name == actual_user_name
+
+    def test_no_valid_auth(self, driver):
+        main = MainPage(driver)
+        main.get_form_auth
+
+        auth = AuthPage(driver)
+        auth.fill_form()
