@@ -1,5 +1,7 @@
 import time
 
+import pytest
+
 from data.data import Auth
 from locators.main_page_locators import MainPageLocators
 from pages.auth_page import AuthPage
@@ -23,9 +25,16 @@ class TestAuth:
         expected_user_name = Auth.user_name
         assert expected_user_name == actual_user_name
 
-    def test_no_valid_auth(self, driver):
+    @pytest.mark.parametrize('login, password, get_err_phone_or_password, actual_err_mess', [
+        (Auth.valid_phone, Auth.short_pass, 'password', Auth.error_message_short_pass)
+    ])
+    def test_display_err_login(self, driver, login, password, get_err_phone_or_password, actual_err_mess):
         main = MainPage(driver)
-        main.get_form_auth
+        main.get_form_auth()
 
         auth = AuthPage(driver)
-        auth.fill_form()
+        auth.fill_form(login, password)
+        ac_error = auth.get_error_login(get_err_phone_or_password)
+        ex_error = actual_err_mess
+        assert ex_error == ac_error
+        print(ac_error)
