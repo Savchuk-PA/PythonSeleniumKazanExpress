@@ -27,3 +27,4 @@ def generate_random_string_a_non_repeat_char(length):
 def generate_alphanum_random_string(length):
     letters_and_digits = string.ascii_letters + string.digits
     return ''.join(random.sample(letters_and_digits, length))
+
