@@ -7,4 +7,4 @@ class AuthPageLocators:
     SIGN_IN_BTN = (By.CSS_SELECTOR, "button[data-test-id = 'button__sign-in']")
     NO_VALID_FORM_SIGN_IN_BTN = (By.CSS_SELECTOR, "button[class= 'ui-component ui-button button primary-black large']")
     CLOSE_WINDOWS_CONFIRM_PHONE = (By.CSS_SELECTOR, "img[class= 'button__close - modal']")
-    AUTH_ERROR_MESSAGE = (By.CSS_SELECTOR, "div[data - error = 'Минимум 8 символов']")
+    AUTH_ERROR_MESSAGE_LOGIN = (By.XPATH, "//div[@data-test-id = 'text__input-validation-error']")

@@ -27,8 +27,9 @@ class TestAuth:
 
     @pytest.mark.parametrize('login, password, get_err_phone_or_password, actual_err_mess', [
         (Auth.valid_phone, Auth.short_pass, 'password', Auth.error_message_short_pass)
+        ()
     ])
-    def test_display_err_login(self, driver, login, password, get_err_phone_or_password, actual_err_mess):
+    def test_display_text_err_auth(self, driver, login, password, get_err_phone_or_password, actual_err_mess):
         main = MainPage(driver)
         main.get_form_auth()
 
@@ -38,3 +39,4 @@ class TestAuth:
         ex_error = actual_err_mess
         assert ex_error == ac_error
         print(ac_error)
+        print(Auth.short_pass)
