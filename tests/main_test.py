@@ -16,7 +16,7 @@ class TestMain:
         main.show_catalog()
         elements = main.get_elements_list()
         s = []
-        for element in range(len(elements)):
-            a = elements[element].text
+        for element in elements:
+            a = element.text
             s.append(a)
         assert s == self.locators.CATALOG_LIST_PRODUCT_NAME
