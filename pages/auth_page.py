@@ -1,9 +1,6 @@
 import time
-
-from data.data import Auth
 from locators.auth_page_locators import AuthPageLocators
 from pages.base_page import BasePage
-import selenium
 
 
 class AuthPage(BasePage):

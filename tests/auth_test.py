@@ -1,11 +1,7 @@
-import time
-
 import pytest
-
 from data.data import Auth
 from locators.main_page_locators import MainPageLocators
 from pages.auth_page import AuthPage
-from pages.base_page import BasePage
 from pages.main_page import MainPage
 
 
@@ -38,6 +34,3 @@ class TestAuth:
         ac_error = auth.get_error_login(get_err_login_or_password)
         ex_error = ex_err_message
         assert ac_error == ex_error
-        print(login, password)
-        print(ex_err_message)
-

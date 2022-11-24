@@ -17,6 +17,6 @@ class Auth:
     long_pass = 'asssssssssssssssssssssssssssssssssssdddddddddddddd12222222222222222444444444444444444444444A'
     error_message_short_pass = 'Минимум 8 символов'
     error_message_short_login = 'Минимум 4 символа'
-    error_message_no_valid_log_and_pas = 'Неизвестная ошибка (429)'
+    error_message_no_valid_log_and_pas = 'Неправильные данные!'
     error_message_no_valid_log_and_pas_correct_data = 'Неверный логин или пароль'
     random_phone = generator_phone_number()

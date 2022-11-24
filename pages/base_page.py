@@ -12,6 +12,12 @@ class BasePage:
     def refresh(self):
         self.driver.refresh()
 
+    def back(self):
+        self.driver.back()
+
+    def forward(self):
+        self.driver.forward()
+
     def element_is_visible(self, locator, timeout=5):
         self.go_to_element(self.element_is_present(locator))
         return wait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
