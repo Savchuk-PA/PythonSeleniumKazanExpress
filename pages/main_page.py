@@ -23,3 +23,6 @@ class MainPage(BasePage):
 
     def get_elements_list(self):
         return self.elements_are_visible(self.locators.CATALOG_LIST)
+
+    def input_search(self, text):
+        self.element_is_visible(self.locators.SEARCH_INPUT).send_keys(text)
