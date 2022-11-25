@@ -11,7 +11,7 @@ from pages.main_page import MainPage
 class TestMain:
     locators = MainPageLocators()
 
-    def test_catalog_products_name(self, driver):
+    def test_catalog_products_pages_name(self, driver):
         main = MainPage(driver)
         main.open(MainPageLocators.URL)
         main.show_catalog()
