@@ -1,3 +1,5 @@
+from selenium.webdriver import Keys
+
 from locators.main_page_locators import MainPageLocators
 from pages.base_page import BasePage
 
@@ -26,3 +28,4 @@ class MainPage(BasePage):
 
     def input_search(self, text):
         self.element_is_visible(self.locators.SEARCH_INPUT).send_keys(text)
+        self.element_is_visible(self.locators.SEARCH_INPUT).send_keys(Keys.ENTER)

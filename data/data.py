@@ -20,3 +20,7 @@ class Auth:
     error_message_no_valid_log_and_pas = 'Неправильные данные!'
     error_message_no_valid_log_and_pas_correct_data = 'Неверный логин или пароль'
     random_phone = generator_phone_number()
+
+
+class Search:
+    manufacturers_name = ['Siaomi', 'Samsung', 'LG']
