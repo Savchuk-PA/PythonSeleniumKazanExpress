@@ -43,4 +43,4 @@ class TestMain:
         main.open(self.locators.page_url[page_url_num])
         ac_title = main.get_title_page()
         ex_title = PageTitle.title_page[ex_page_title]
-        print(ac_title, ex_title)
+        assert  ac_title == ex_title
