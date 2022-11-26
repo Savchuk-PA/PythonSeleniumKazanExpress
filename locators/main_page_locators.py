@@ -16,6 +16,7 @@ class MainPageLocators:
 
     TITLE_PAGE = (By.CSS_SELECTOR, "h1[data-test-id = 'text__title']")
     ADVERTISEMENT_BlOCK = (By.CSS_SELECTOR, "div .banner-wrapper")
+    COLOR_BLOCK_FOR_PRODUCT_ITEM = (By.CSS_SELECTOR, "ul .filter-options")
 
     # Links page site
     ELECTRONICS_URL = 'https://kazanexpress.ru/category/Elektronika-10020'

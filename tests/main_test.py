@@ -3,6 +3,7 @@ import time
 import pytest
 
 from data.data import Search, PageTitle
+from helpers.generators import get_list_num
 from locators.main_page_locators import MainPageLocators
 from pages.list_products_page import ListProductsPage
 
@@ -49,4 +50,11 @@ class TestMain:
         main = MainPage(driver)
         main.open(self.locators.URL)
         block_is_display = main.element_is_visible(self.locators.ADVERTISEMENT_BlOCK).is_displayed()
-        assert block_is_display
+        assert block_is_display, "Блок с рекламой не отображается на странице"
+
+    @pytest.mark.parametrize('page_url', get_list_num(20))
+    def test_check_block_for_selected_color_products_items(self, driver, page_url):
+        main = MainPage(driver)
+        main.open(self.locators.page_url[page_url])
+        block_is_display = main.check_color_block()
+        assert block_is_display, "Блок с выбором цвета отсутствует на странице"

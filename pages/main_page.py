@@ -32,3 +32,6 @@ class MainPage(BasePage):
 
     def get_title_page(self):
         return self.element_is_visible(self.locators.TITLE_PAGE).text
+
+    def check_color_block(self):
+        return self.element_is_visible(self.locators.COLOR_BLOCK_FOR_PRODUCT_ITEM).is_displayed()
