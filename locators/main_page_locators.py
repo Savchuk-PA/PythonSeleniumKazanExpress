@@ -15,6 +15,7 @@ class MainPageLocators:
     SEARCH_INPUT = (By.CSS_SELECTOR, "input[data-test-id = 'input__search']")
 
     TITLE_PAGE = (By.CSS_SELECTOR, "h1[data-test-id = 'text__title']")
+    ADVERTISEMENT_BlOCK = (By.CSS_SELECTOR, "div .banner-wrapper")
 
     # Links page site
     ELECTRONICS_URL = 'https://kazanexpress.ru/category/Elektronika-10020'
