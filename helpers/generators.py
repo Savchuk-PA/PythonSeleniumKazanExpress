@@ -31,3 +31,7 @@ def generate_alphanum_random_string(length):
 
 def generator_phone_number():
     return '89' + str(random.randint(170000000, 999999999))
+
+
+def get_list(a):
+    return [i for i in range(a)]
