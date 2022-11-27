@@ -28,7 +28,7 @@ class MainPage(BasePage):
 
     def input_search(self, text):
         self.element_is_visible(self.locators.SEARCH_INPUT).send_keys(text)
-        self.element_is_visible(self.locators.SEARCH_INPUT).send_keys(Keys.ENTER)
+        self.element_is_visible(self.locators.SEARCH_INPUT).send_keys("ENTER")
 
     def get_title_page(self):
         return self.element_is_visible(self.locators.TITLE_PAGE).text

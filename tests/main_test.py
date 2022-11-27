@@ -1,9 +1,9 @@
 import random
 import time
 import pytest
-
 from data.data import Search, PageTitle
 from helpers.generators import get_list_num
+from helpers.help_get import get_num_in_str
 from locators.main_page_locators import MainPageLocators
 from pages.list_products_page import ListProductsPage
 
@@ -58,3 +58,15 @@ class TestMain:
         main.open(self.locators.page_url[page_url])
         block_is_display = main.check_color_block()
         assert block_is_display, "Блок с выбором цвета отсутствует на странице"
+
+    @pytest.mark.xfail
+    def test_sort_sort_in_descending_order(self, driver):
+        main = MainPage(driver)
+        main.open(self.locators.page_url[1])
+        list_p = ListProductsPage(driver)
+        test_price = random.randint(100, 1000)
+        list_p.set_price_item(test_price)
+        list_p.set_sort_price(1)  # Подешевле
+        ac_price = get_num_in_str(list_p.get_item_card_price(0))
+        assert ac_price >= test_price, f"Цена товара долна быть равной или меньшей {test_price}," \
+                                       f" фактическая цена{ac_price}"
